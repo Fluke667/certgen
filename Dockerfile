@@ -2,7 +2,7 @@ FROM alpine:3.10
 MAINTAINER Fluke667 <Fluke667@gmail.com>  
 ARG TZ='Europe/Berlin' 
 
-RUN apk add --update openssl make && \ 
+RUN apk add --update openssl make augeas shadow && \ 
     mkdir -p ~root/.ssh /etc/authorized_keys && chmod 700 ~root/.ssh/ && \
     rm -rf /var/cache/apk/*
 
