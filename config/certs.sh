@@ -1,6 +1,5 @@
 #!/bin/sh
 
-mkdir -p /etc/certs/ssl/
 SUBJ="/C=$CRT_COUNTY/ST=$CRT_STATE/L=$CRT_LOCATION/O=$CRT_ORGANISATION"
 
 if [ ! -f "$CRT_CERT_DIR/$CRT_ROOT_NAME.crt" ]
@@ -96,7 +95,7 @@ then
     -out "$CRT_CERT_DIR/$CRT_PUBLIC_NAME.crt" \
     -CAcreateserial \
     -extfile public.ext \
-    -CRT_DAYS "$CRT_DAYS"
+    -days "$CRT_DAYS"
 else
   echo "ENTRYPOINT: $CRT_PUBLIC_NAME.crt already exists"
 fi
