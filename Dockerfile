@@ -1,4 +1,4 @@
-FROM fluke667:alpine
+FROM fluke667/alpine
 MAINTAINER Fluke667 <Fluke667@gmail.com>  
 
 
