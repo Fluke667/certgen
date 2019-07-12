@@ -1,8 +1,6 @@
 FROM alpine:3.10
 MAINTAINER Fluke667 <Fluke667@gmail.com>  
-ARG TZ='Europe/Berlin'
-ENV CRT_CERT_DIR=/etc/certs/ssl
- 
+ARG TZ='Europe/Berlin' 
 
 RUN apk add --update openssl && \ 
     rm -rf /var/cache/apk/*
