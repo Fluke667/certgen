@@ -2,7 +2,7 @@ FROM alpine:3.10
 MAINTAINER Fluke667 <Fluke667@gmail.com>  
 ARG TZ='Europe/Berlin' 
 
-RUN apk add --update openssl make && \ 
+RUN apk add --update openssl make openssh && \ 
     rm -rf /var/cache/apk/*
 
 VOLUME ["/etc/certs/ssl"]
