@@ -10,4 +10,4 @@ VOLUME ["/etc/certs/ssl"]
 
 ADD ./config /config
 RUN chmod 0700 /config/*.sh
-RUN /config/certs.sh
+RUN /config/*.sh
