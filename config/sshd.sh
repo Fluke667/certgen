@@ -40,6 +40,9 @@ mkdir -p /etc/ssh/keys
             chmod 600 /etc/ssh/keys/ssh_host_ecdsa_key
 
 ssh-keygen -t "$SSH_KEYS_ROOT_TYPE" -b "$SSH_KEYS_ROOT_SIZE"  -f "$SSH_KEYS_ROOT_ID" -N "$SSH_ROOT_PASSWORD"
+chmod 0600 "$SSH_KEYS_ROOT_ID" "$SSH_KEYS_ROOT_CRT"
+
+
 mkdir -p /etc/ssh/keys/authorized_keys
 # Add Public Keys to root account
 if [ -n "$SSH_KEYS_ROOT_CRT" ]; then
