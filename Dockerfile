@@ -13,6 +13,6 @@ EXPOSE 22
 
 ADD ./config /config
 RUN chmod 0700 /config/*.sh
-RUN /config/certs.sh \
-    /config/sshd.sh
+RUN /config/certs.sh
+   # /config/sshd.sh
     
