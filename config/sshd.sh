@@ -40,10 +40,10 @@ mkdir -p /etc/ssh/keys
             chmod 600 /etc/ssh/keys/ssh_host_ecdsa_key
 
 
-mkdir -p /etc/ssh/authorized_keys
+mkdir -p /etc/ssh/keys/authorized_keys
 # Add Public Keys to root account
 if [ -n "$SSH_USERKEYS_ROOT" ]; then
-		echo "$SSH_USERKEYS_ROOT" > /etc/ssh/authorized_keys/root
+		echo "$SSH_USERKEYS_ROOT" > /etc/ssh/keys/authorized_keys/root
 fi
 
 # Create sysop account and add Public Keys to it
@@ -51,8 +51,8 @@ if [ -n "$SSH_AUTH_KEYS" ] || [ -n "$USER_KEYS_SYSOP" ]; then
 		adduser -g "administration" -D sysop
 		passwd -u sysop
 
-		echo "$SSH_AUTH_KEYS" > /etc/ssh/authorized_keys/sysop
-		echo "$USER_KEYS_SYSOP" >> /etc/ssh/authorized_keys/sysop
+		echo "$SSH_AUTH_KEYS" > /etc/ssh/keys/authorized_keys/sysop
+		echo "$USER_KEYS_SYSOP" >> /etc/ssh/keys/authorized_keys/sysop
 fi
 
 #prepare run dir
