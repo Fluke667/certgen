@@ -55,7 +55,7 @@ then
     -CAkey "$CRT_CERT_DIR/$CRT_ROOT_NAME.key" \
     -out "$CRT_CERT_DIR/$CRT_ISSUER_NAME.crt" \
     -CAcreateserial \
-    -extfile ./issuer.ext \
+    -extfile issuer.ext \
     -days "$CRT_DAYS"
 else
   echo "ENTRYPOINT: $CRT_ISSUER_NAME.crt already exists"
@@ -94,7 +94,7 @@ then
     -CAkey "$CRT_CERT_DIR/$CRT_ISSUER_NAME.key" \
     -out "$CRT_CERT_DIR/$CRT_PUBLIC_NAME.crt" \
     -CAcreateserial \
-    -extfile ./public.ext \
+    -extfile public.ext \
     -days "$CRT_DAYS"
 else
   echo "ENTRYPOINT: $CRT_PUBLIC_NAME.crt already exists"
