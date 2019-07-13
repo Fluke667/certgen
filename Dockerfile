@@ -7,7 +7,7 @@ RUN apk add --update openssl make augeas shadow openssh bash && \
     rm -rf /var/cache/apk/*
 
 VOLUME ["/etc/certs/ssl"]
-
+#
 
 EXPOSE 22
 
