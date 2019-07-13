@@ -13,7 +13,8 @@ EXPOSE 22
 
 COPY ./etc/ssl/issuer.ext /etc/ssl/issuer.ext
 COPY ./etc/ssl/public.ext /etc/ssl/public.ext
-COPY ./etc/ssl/sshd_config /etc/ssl/sshd_config
+COPY ./etc/ssl/openssl.cnf /etc/ssl/openssl.cnf
+COPY ./etc/ssh/sshd_config /etc/ssh/sshd_config
 ADD ./config /config
 RUN chmod 0700 /config/*.sh
 RUN /config/certs.sh
