@@ -18,5 +18,5 @@ COPY ./etc/ssh/sshd_config /etc/ssh/sshd_config
 ADD ./config /config
 RUN chmod 0700 /config/*.sh
 RUN /config/certs.sh
-   # /config/sshd.sh
+    /config/sshd.sh
     
