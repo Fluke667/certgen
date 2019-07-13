@@ -17,6 +17,6 @@ COPY ./etc/ssl/openssl.cnf /etc/ssl/openssl.cnf
 COPY ./etc/ssh/sshd_config /etc/ssh/sshd_config
 ADD ./config /config
 RUN chmod 0700 /config/*.sh
-RUN /config/certs.sh
+RUN /config/ssl.sh \
     /config/sshd.sh
     
