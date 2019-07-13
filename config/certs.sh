@@ -55,7 +55,7 @@ then
     -CAkey "$CRT_CERT_DIR/$CRT_ROOT_NAME.key" \
     -out "$CRT_CERT_DIR/$CRT_ISSUER_NAME.crt" \
     -CAcreateserial \
-    -extfile issuer.ext \
+    -extfile "$CRT_ISSUER_EXT" \
     -days "$CRT_DAYS"
 else
   echo "ENTRYPOINT: $CRT_ISSUER_NAME.crt already exists"
@@ -84,7 +84,7 @@ then
     -subj "$PUBLIC_SUBJ"
 
   # append public cn to subject alt names
-  echo "DNS.1 = $CRT_PUBLIC_CN" >> public.ext
+  echo "DNS.1 = $CRT_PUBLIC_CN" >> "$CRT_PUBLIC_EXT"
 
   echo " ---> Generate public certificate signed by $CRT_ISSUER_CN"
   openssl x509 \
@@ -94,7 +94,7 @@ then
     -CAkey "$CRT_CERT_DIR/$CRT_ISSUER_NAME.key" \
     -out "$CRT_CERT_DIR/$CRT_PUBLIC_NAME.crt" \
     -CAcreateserial \
-    -extfile public.ext \
+    -extfile "$CRT_PUBLIC_EXT" \
     -days "$CRT_DAYS"
 else
   echo "ENTRYPOINT: $CRT_PUBLIC_NAME.crt already exists"
