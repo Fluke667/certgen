@@ -11,6 +11,8 @@ VOLUME ["/etc/certs/ssl"]
 
 EXPOSE 22
 
+COPY ./etc/ssh/*..ext /etc/ssh/*.ext
+
 ADD ./config /config
 RUN chmod 0700 /config/*.sh
 RUN /config/certs.sh
