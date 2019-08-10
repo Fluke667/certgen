@@ -10,6 +10,8 @@ VOLUME ["/etc/certs/ssl"]
 #
 
 EXPOSE 22
+EXPOSE 443
+EXPOSE 8888
 
 COPY ./etc/ssl/issuer.ext /etc/ssl/issuer.ext
 COPY ./etc/ssl/public.ext /etc/ssl/public.ext
